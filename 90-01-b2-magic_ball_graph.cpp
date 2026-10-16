@@ -1,8 +1,7 @@
-/* 2352475 ¼Æ¿Æ Ò×Ñô */
 #include <iostream>
 #include <windows.h>
-#include "../include/cmd_console_tools.h"
-#include "../include/common-popstar_ball.h"
+#include "cmd_console_tools.h"
+#include "common-popstar_ball.h"
 #include "90-01-b2-magic_ball.h"
 using namespace std;
 
@@ -15,28 +14,28 @@ void frame(int row, int col, int select)
 	else
 		x = 1;
 
-	cct_showstr(0, 1, "¨X", COLOR_HWHITE, COLOR_BLACK, 1);
+	cct_showstr(0, 1, "â•”", COLOR_HWHITE, COLOR_BLACK, 1);
 	if (select == '4' || select == '5') {
 		Sleep(50);
 	}
 	for (i = 0; i < col; i++) {
-		cct_showstr(2 + (2 + 2 * x) * i, 1, "¨T", COLOR_HWHITE, COLOR_BLACK, 1);
+		cct_showstr(2 + (2 + 2 * x) * i, 1, "â•", COLOR_HWHITE, COLOR_BLACK, 1);
 		if (select == '4' || select == '5') {
 			Sleep(50);
 		}
 		if (x && (i < col - 1)) {
-			cct_showstr(4 + 4 * i, 1, "¨j", COLOR_HWHITE, COLOR_BLACK, 1);
+			cct_showstr(4 + 4 * i, 1, "â•¦", COLOR_HWHITE, COLOR_BLACK, 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
 		}
 	}
-	cct_showstr(2 + (2 + 2 * x) * col - 2 * x, 1, "¨[", COLOR_HWHITE, COLOR_BLACK, 1);
+	cct_showstr(2 + (2 + 2 * x) * col - 2 * x, 1, "â•—", COLOR_HWHITE, COLOR_BLACK, 1);
 	if (select == '4' || select == '5') {
 		Sleep(50);
 	}
 	for (j = 0; j < row; j++) {
-		cct_showstr(0, j * (x + 1) + 2, "¨U", COLOR_HWHITE, COLOR_BLACK, 1);
+		cct_showstr(0, j * (x + 1) + 2, "â•‘", COLOR_HWHITE, COLOR_BLACK, 1);
 		if (x) {
 			for (i = 0; i < col; i++) {
 				cct_showstr(2 + 4 * i, j * (x + 1) + 2, "  ", COLOR_HWHITE, COLOR_HWHITE, 1);
@@ -44,50 +43,50 @@ void frame(int row, int col, int select)
 					Sleep(50);
 				}
 				if (i < col - 1) {
-					cct_showstr(4 + 4 * i, j * (x + 1) + 2, "¨U", COLOR_HWHITE, COLOR_BLACK, 1);
+					cct_showstr(4 + 4 * i, j * (x + 1) + 2, "â•‘", COLOR_HWHITE, COLOR_BLACK, 1);
 					if (select == '4' || select == '5') {
 						Sleep(50);
 					}
 				}
 			}
 		}
-		cct_showstr(2 + (2 + 2 * x) * col - 2 * x, j * (x + 1) + 2, "¨U", COLOR_HWHITE, COLOR_BLACK, 1);
+		cct_showstr(2 + (2 + 2 * x) * col - 2 * x, j * (x + 1) + 2, "â•‘", COLOR_HWHITE, COLOR_BLACK, 1);
 		if (select == '4' || select == '5') {
 			Sleep(50);
 		}
 		if (x && (j < row - 1)) {
-			cct_showstr(0, j * (x + 1) + 3, "¨d¨T", COLOR_HWHITE, COLOR_BLACK, 1);
+			cct_showstr(0, j * (x + 1) + 3, "â• â•", COLOR_HWHITE, COLOR_BLACK, 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
-			cct_showstr(4, j * (x + 1) + 3, "¨p¨T", COLOR_HWHITE, COLOR_BLACK, col - 1);
+			cct_showstr(4, j * (x + 1) + 3, "â•¬â•", COLOR_HWHITE, COLOR_BLACK, col - 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
-			cct_showstr(4 * col, j * (x + 1) + 3, "¨g", COLOR_HWHITE, COLOR_BLACK, 1);
+			cct_showstr(4 * col, j * (x + 1) + 3, "â•£", COLOR_HWHITE, COLOR_BLACK, 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
 		}
 	}
 
-	cct_showstr(0, (row - 1) * (x + 1) + 3, "¨^", COLOR_HWHITE, COLOR_BLACK, 1);
+	cct_showstr(0, (row - 1) * (x + 1) + 3, "â•š", COLOR_HWHITE, COLOR_BLACK, 1);
 	if (select == '4' || select == '5') {
 		Sleep(50);
 	}
 	for (i = 0; i < col; i++) {
-		cct_showstr(2 + (2 + 2 * x) * i, (row - 1) * (x + 1) + 3, "¨T", COLOR_HWHITE, COLOR_BLACK, 1);
+		cct_showstr(2 + (2 + 2 * x) * i, (row - 1) * (x + 1) + 3, "â•", COLOR_HWHITE, COLOR_BLACK, 1);
 		if (select == '4' || select == '5') {
 			Sleep(50);
 		}
 		if (x && (i < col - 1)) {
-			cct_showstr(4 + 4 * i, (row - 1) * (x + 1) + 3, "¨m", COLOR_HWHITE, COLOR_BLACK, 1);
+			cct_showstr(4 + 4 * i, (row - 1) * (x + 1) + 3, "â•©", COLOR_HWHITE, COLOR_BLACK, 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
 		}
 	}
-	cct_showstr(2 + (2 + 2 * x) * col - 2 * x, (row - 1) * (x + 1) + 3, "¨a", COLOR_HWHITE, COLOR_BLACK, 1);
+	cct_showstr(2 + (2 + 2 * x) * col - 2 * x, (row - 1) * (x + 1) + 3, "â•", COLOR_HWHITE, COLOR_BLACK, 1);
 	if (select == '4' || select == '5') {
 		Sleep(50);
 	}
@@ -102,7 +101,7 @@ void print_ball(char ball[][9], int row, int col, int select)
 		x = 1;
 	for (i = 0; i < row; i++) {
 		for (j = 0; j < col; j++) {
-			cct_showstr(2 + (2 + 2 * x) * j, 2 + (1 + x) * i, "¡ð", ball[i][j], COLOR_BLACK, 1);
+			cct_showstr(2 + (2 + 2 * x) * j, 2 + (1 + x) * i, "â—‹", ball[i][j], COLOR_BLACK, 1);
 			if (select == '4' || select == '5') {
 				Sleep(50);
 			}
@@ -125,7 +124,7 @@ void print_check(struct RAND ball[10][10], int row, int col,int* p_bomb)
 			if (n1 > 2) {
 				for (m = 0; m < n1; m++) {
 					*(p_bomb++) = i * 9 + j + m;
-					cct_showstr(2 + 4 * (j + m), 2 + 2 * i, "¡ñ", ball[i][j].number, COLOR_BLACK, 1);
+					cct_showstr(2 + 4 * (j + m), 2 + 2 * i, "â—", ball[i][j].number, COLOR_BLACK, 1);
 					cct_setcolor();
 				}
 				num++;
@@ -142,7 +141,7 @@ void print_check(struct RAND ball[10][10], int row, int col,int* p_bomb)
 			if (n2 > 2) {
 				for (m = 0; m < n2; m++) {
 					*(p_bomb++) = (i + m) * 9 + j;
-					cct_showstr(2 + 4 * j, 2 + 2 * (i + m), "¡ñ", ball[i][j].number, COLOR_BLACK, 1);
+					cct_showstr(2 + 4 * j, 2 + 2 * (i + m), "â—", ball[i][j].number, COLOR_BLACK, 1);
 					cct_setcolor();
 				}
 				num++;
@@ -153,7 +152,7 @@ void print_check(struct RAND ball[10][10], int row, int col,int* p_bomb)
 	if (num == 0) {
 		cct_gotoxy(0, 0);
 		cct_setcolor();
-		cout << "³õÊ¼ÒÑÎÞ¿ÉÏû³ýÏî" << endl;
+		cout << "åˆå§‹å·²æ— å¯æ¶ˆé™¤é¡¹" << endl;
 	}
 }
 
@@ -163,11 +162,11 @@ int print_disappear(struct RAND ball[10][10], int row, int col, int bomb[])
 	int num = 0;
 	for (i = 0; bomb[i] >= 0; i++) {
 		if (ball[bomb[i] / 9][bomb[i] % 9].number != '0') {
-			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "¡è", ball[bomb[i] / 9][bomb[i] % 9].number, COLOR_BLACK, 1);
+			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "Â¤", ball[bomb[i] / 9][bomb[i] % 9].number, COLOR_BLACK, 1);
 			Sleep(100);
 			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "  ", ball[bomb[i] / 9][bomb[i] % 9].number, COLOR_BLACK, 1);
 			Sleep(100);
-			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "¡è", ball[bomb[i] / 9][bomb[i] % 9].number, COLOR_BLACK, 1);
+			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "Â¤", ball[bomb[i] / 9][bomb[i] % 9].number, COLOR_BLACK, 1);
 			Sleep(100);
 			cct_showstr(2 + 4 * (bomb[i] % 9), 2 + 2 * (bomb[i] / 9), "  ", COLOR_HWHITE, COLOR_HWHITE, 1);
 			Sleep(100);
@@ -192,7 +191,7 @@ void print_down(struct RAND ball[10][10], int row, int col)
 					ball[i - k][j].number = ball[i - k - 1][j].number;
 					ball[i - k - 1][j].number = t;
 					if (ball[i - k][j].number != '0') {
-						cct_showstr(2 + 4 * j, 2 + 2 * (i - k), "¡ð", ball[i - k][j].number, COLOR_BLACK, 1);
+						cct_showstr(2 + 4 * j, 2 + 2 * (i - k), "â—‹", ball[i - k][j].number, COLOR_BLACK, 1);
 					}
 					if (ball[i - k][j].number == '0') {
 						cct_showstr(2 + 4 * j, 2 + 2 * (i - k), "  ", COLOR_HWHITE, COLOR_HWHITE, 1);
@@ -217,7 +216,7 @@ void print_fill(struct RAND ball[10][10], int row, int col)
 				ball[i][j].sign = 0;
 				ball[i][j].color = 0;
 				ball[i][j].zero_up = 0;
-				cct_showstr(2 + 4 * j, 2 + 2 * i, "¡ð", ball[i][j].number, COLOR_BLACK, 1);
+				cct_showstr(2 + 4 * j, 2 + 2 * i, "â—‹", ball[i][j].number, COLOR_BLACK, 1);
 				Sleep(100);
 			}
 		}
@@ -331,7 +330,7 @@ int print_exchange(struct RAND ball[10][10], int row, int col, int* p_note)
 	p = temp;
 	if (*p >= 0) {
 		for (; *p >= 0; p++) {
-			cct_showstr(2 + 4 * (*p % 9), 2 + 2 * (*p / 9), "¡ò", ball[*p / 9][*p % 9].number, COLOR_BLACK, 1);
+			cct_showstr(2 + 4 * (*p % 9), 2 + 2 * (*p / 9), "â—Ž", ball[*p / 9][*p % 9].number, COLOR_BLACK, 1);
 			*(p_note++) = *p;
 		}
 		*p_note = -1;
