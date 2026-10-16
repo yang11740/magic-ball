@@ -1,12 +1,11 @@
 #pragma once
-/* 2352475 ¼Æ¿Æ Ò×Ñô */
 
 #define ROW_MAX 9
 #define COL_MAX 9
 #define ROW_MIN 5
 #define COL_MIN 5
 
-/*ÓëÄÚ²¿Êı×éÓĞ¹ØµÄº¯Êı*/
+/*ä¸å†…éƒ¨æ•°ç»„æœ‰å…³çš„å‡½æ•°*/
 int judge_all(struct RAND ball[10][10], int row, int col);
 void mark_zero        (char ball[][COL_MAX], int row, int col, int x, int y);
 void check(struct RAND ball[10][10], int row, int col, int sel, const char* row_sign, const char* col_sign);
@@ -17,15 +16,15 @@ void renew(struct RAND ball[10][10], int row, int col, const char* row_sign, con
 void exchange(struct RAND ball[10][10], int row, int col, const char* row_sign, const char* col_sign);
 void wait             (const char* prompt, int choice);
 
-/*ÓëÎ±Í¼ĞÎ½çÃæÓĞ¹ØµÄº¯Êı*/
+/*ä¸ä¼ªå›¾å½¢ç•Œé¢æœ‰å…³çš„å‡½æ•°*/
 void print_check(struct RAND ball[10][10], int row, int col, int* p_bomb);
 int print_disappear(struct RAND ball[10][10], int row, int col, int bomb[]);
 void print_fill(struct RAND ball[10][10], int row, int col);
 int print_exchange(struct RAND ball[10][10], int row, int col, int* p_note);
 
-/*ÅĞ¶ÏÊó±êÑ¡ÔñµÄÏà¹Øº¯Êı*/
+/*åˆ¤æ–­é¼ æ ‡é€‰æ‹©çš„ç›¸å…³å‡½æ•°*/
 int choice            (int X, int Y, int note[]);
 int location(struct RAND ball[10][10], int row, int col, int y, int sel, int note[]);
 
-/*ÓëÓÎÏ·¼ÇÂ¼ÓĞ¹ØµÄº¯Êı*/
+/*ä¸æ¸¸æˆè®°å½•æœ‰å…³çš„å‡½æ•°*/
 int game(struct RAND ball[10][10], int row, int col, int y, int* p_note, int note[], int* p_bomb, int bomb[], const char* unit);
