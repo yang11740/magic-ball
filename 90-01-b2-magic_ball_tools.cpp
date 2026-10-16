@@ -1,9 +1,8 @@
-/* 2352475 ¼Æ¿Æ Ò×Ñô */
 #include <iostream>
 #include <time.h>
 #include <windows.h>
-#include "../include/cmd_console_tools.h"
-#include "../include/common-popstar_ball.h"
+#include "cmd_console_tools.h"
+#include "common-popstar_ball.h"
 #include "90-01-b2-magic_ball.h"
 using namespace std;
 
@@ -72,14 +71,14 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 		cct_read_keyboard_and_mouse(X, Y, maction, keycode1, keycode2);
 		if ((X - 2) / 4 >= 0 && (X - 2) / 4 < col && (Y - 2) / 2 >= 0 && (Y - 2) / 2 < row && ((X - 2) % 4 == 0 || (X - 2) % 4 == 1) && (Y - 2) % 2 == 0) {
 			cct_setcolor();
-			cout << "[µ±Ç°¹â±ê]  " << (char)('A' + (Y - 2) / 2) << "ÐÐ" << (X - 2) / 4 + 1 << "ÁÐ       ";
+			cout << "[å½“å‰å…‰æ ‡]  " << (char)('A' + (Y - 2) / 2) << "è¡Œ" << (X - 2) / 4 + 1 << "åˆ—       ";
 			n = 1;
 			if ((X - 2) % 4 == 1)
 				X--;
 		}
 		else {
 			cct_setcolor();
-			cout << "[µ±Ç°¹â±ê]  Î»ÖÃ·Ç·¨                    ";
+			cout << "[å½“å‰å…‰æ ‡]  ä½ç½®éžæ³•                    ";
 			n = 0;
 		}
 		if (n) {
@@ -88,7 +87,7 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 					if (choice(X, Y, note)) {
 						cct_gotoxy(0, y + 1);
 						cct_setcolor();
-						cout << "Ñ¡Ôñ" << (char)('A' + (Y - 2) / 2) << "ÐÐ" << (X - 2) / 4 + 1 << "ÁÐ          ";
+						cout << "é€‰æ‹©" << (char)('A' + (Y - 2) / 2) << "è¡Œ" << (X - 2) / 4 + 1 << "åˆ—          ";
 						if (sel == '8') {
 							Sleep(300);
 							cct_disable_mouse();
@@ -99,7 +98,7 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 							Sleep(200);
 							num[(Y - 2) / 2][(X - 2) / 4]++;
 							if (num[(Y - 2) / 2][(X - 2) / 4] % 2 == 1) {
-								cct_showstr(X, Y, "¡ò", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_HWHITE, 1);
+								cct_showstr(X, Y, "â—Ž", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_HWHITE, 1);
 								if (1) {
 									if (p == temp) {
 										*(p++) = ((Y - 2) / 2) * 9 + (X - 2) / 4;
@@ -110,15 +109,15 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 										if (temp[0] / 9 - temp[1] / 9 == 1 || temp[0] / 9 - temp[1] / 9 == -1 || temp[0] % 9 - temp[1] % 9 == 1 || temp[0] % 9 - temp[1] % 9 == -1) {
 											ret = test(&temp[0], &temp[1], ball, row, col);
 											if (ret) {
-												cct_showstr(X, Y, "¡ð", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_BLACK, 1);
-												cct_showstr(temp[0] % 9 * 4 + 2, temp[0] / 9 * 2 + 2, "¡ð", ball[temp[0] / 9][temp[0] % 9].number, COLOR_BLACK, 1);
+												cct_showstr(X, Y, "â—‹", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_BLACK, 1);
+												cct_showstr(temp[0] % 9 * 4 + 2, temp[0] / 9 * 2 + 2, "â—‹", ball[temp[0] / 9][temp[0] % 9].number, COLOR_BLACK, 1);
 												p = temp;
 												return 1;
 											}
 											else {
 												cct_setcolor();
 												cct_gotoxy(0, y + 1);
-												cout << "²»ÄÜ½»»»" << (char)('A' + temp[0] / 9) << "ÐÐ" << temp[0] % 9 + 1 << "ÁÐ<=>" << (char)('A' + temp[1] / 9) << "ÐÐ" << temp[1] % 9 + 1 << "ÁÐ   ";
+												cout << "ä¸èƒ½äº¤æ¢" << (char)('A' + temp[0] / 9) << "è¡Œ" << temp[0] % 9 + 1 << "åˆ—<=>" << (char)('A' + temp[1] / 9) << "è¡Œ" << temp[1] % 9 + 1 << "åˆ—   ";
 												Sleep(200);
 												p = temp;
 												return 0;
@@ -126,14 +125,14 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 										}
 										else {
 											p = temp;
-											cct_showstr(temp[0] % 9 * 4 + 2, temp[0] / 9 * 2 + 2, "¡ò", ball[temp[0] / 9][temp[0] % 9].number, COLOR_BLACK, 1);
+											cct_showstr(temp[0] % 9 * 4 + 2, temp[0] / 9 * 2 + 2, "â—Ž", ball[temp[0] / 9][temp[0] % 9].number, COLOR_BLACK, 1);
 											continue;
 										}
 									}
 								}
 							}
 							else {
-								cct_showstr(X, Y, "¡ò", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_BLACK, 1);
+								cct_showstr(X, Y, "â—Ž", ball[(Y - 2) / 2][(X - 2) / 4].number, COLOR_BLACK, 1);
 							}
 							break;
 						}
@@ -141,7 +140,7 @@ int location(struct RAND ball[10][10], int row, int col,int y,int sel,int note[]
 					else {
 						cct_gotoxy(0, y + 1);
 						cct_setcolor();
-						cout << "²»ÄÜÑ¡Ôñ" << (char)('A' + (Y - 2) / 2) << "ÐÐ" << (X - 2) / 4 + 1 << "ÁÐ         ";
+						cout << "ä¸èƒ½é€‰æ‹©" << (char)('A' + (Y - 2) / 2) << "è¡Œ" << (X - 2) / 4 + 1 << "åˆ—         ";
 						Sleep(100);
 					}
 					break;
@@ -162,7 +161,7 @@ int game(struct RAND ball[10][10], int row, int col, int y, int* p_note,int note
 	while (1) {
 		cct_gotoxy(0, 0);
 		cct_setcolor();
-		cout << "µ±Ç°·ÖÊý£º" << score << " ÓÒ¼üÍË³ö              ";
+		cout << "å½“å‰åˆ†æ•°ï¼š" << score << " å³é”®é€€å‡º              ";
 		ret1 = print_exchange(ball, row, col, p_note);
 		if (ret1) {
 			ret2 = location(ball, row, col, y, '9', note);
@@ -171,18 +170,18 @@ int game(struct RAND ball[10][10], int row, int col, int y, int* p_note,int note
 				score += print_disappear(ball, row, col, bomb);
 				cct_gotoxy(0, 0);
 				cct_setcolor();
-				cout << "µ±Ç°·ÖÊý£º" << score << " ÓÒ¼üÍË³ö             ";
+				cout << "å½“å‰åˆ†æ•°ï¼š" << score << " å³é”®é€€å‡º             ";
 
 				print_move(row, col, ball, NULL, unit, 1, 2, 1, 0);
 				print_fill(ball, row, col);
 				for (i = 0; note[i] >= 0; i++)
-					cct_showstr(2 + 4 * (note[i] % 9), 2 + 2 * (note[i] / 9), "¡ð", ball[note[i] / 9][note[i] % 9].number, COLOR_BLACK, 1);
+					cct_showstr(2 + 4 * (note[i] % 9), 2 + 2 * (note[i] / 9), "â—‹", ball[note[i] / 9][note[i] % 9].number, COLOR_BLACK, 1);
 			}
 		}
 		if (ret1 == 0) {
 			cct_gotoxy(0, 0);
 			cct_setcolor();
-			cout << "×îÖÕ·ÖÊý£º" << score;
+			cout << "æœ€ç»ˆåˆ†æ•°ï¼š" << score;
 			return 1;
 		}
 		if (ret2 == -1) {
