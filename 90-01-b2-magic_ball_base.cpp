@@ -1,10 +1,9 @@
-/* 2352475 ¼Æ¿Æ Ò×Ñô */
 #include <iostream>
 #include <conio.h>
 #include <time.h>
 #include <windows.h>
-#include "../include/cmd_console_tools.h"
-#include "../include/common-popstar_ball.h"
+#include "cmd_console_tools.h"
+#include "common-popstar_ball.h"
 #include "90-01-b2-magic_ball.h"
 using namespace std;
 
@@ -12,7 +11,7 @@ int judge_all(struct RAND ball[10][10], int row, int col)
 {
 	int i, j, k, n1 = 1, n2 = 1, num = 0, m;
 
-	//²éÕÒÃ¿Ò»ĞĞÖĞÊÇ·ñÓĞ¿ÉÏû³ıÏî
+	//æŸ¥æ‰¾æ¯ä¸€è¡Œä¸­æ˜¯å¦æœ‰å¯æ¶ˆé™¤é¡¹
 	for (i = 0; i < row; i++) {
 		for (j = 0; j < col - 2; j += n1) {
 			n1 = 1;
@@ -29,7 +28,7 @@ int judge_all(struct RAND ball[10][10], int row, int col)
 			}
 		}
 	}
-	//²éÕÒÃ¿Ò»ÁĞÖĞÊÇ·ñÓĞ¿ÉÏû³ıÏî
+	//æŸ¥æ‰¾æ¯ä¸€åˆ—ä¸­æ˜¯å¦æœ‰å¯æ¶ˆé™¤é¡¹
 	for (j = 0; j < col; j++) {
 		for (i = 0; i < row - 2; i += n2) {
 			n2 = 1;
@@ -89,21 +88,21 @@ void mark(char ball[][COL_MAX], int row, int col, int x, int y)
 void check(struct RAND ball[10][10], int row, int col, int sel, const char* row_sign, const char* col_sign)
 {
 	int x, y;
-	wait("°´»Ø³µ¼ü½øĞĞÑ°ÕÒ³õÊ¼¿ÉÏû³ıÏîµÄ²Ù×÷...", 1);
+	wait("æŒ‰å›è½¦é”®è¿›è¡Œå¯»æ‰¾åˆå§‹å¯æ¶ˆé™¤é¡¹çš„æ“ä½œ...", 1);
 
 	if (judge_all(ball, row, col)) {
 		cout << endl;
-		cout << "³õÊ¼¿ÉÏû³ıÏî£¨²»Í¬É«±êÊ¶£©£º" << endl;
+		cout << "åˆå§‹å¯æ¶ˆé™¤é¡¹ï¼ˆä¸åŒè‰²æ ‡è¯†ï¼‰ï¼š" << endl;
 		mark(row, col, row_sign, col_sign, ball);
 		cct_getxy(x, y);
 		cct_gotoxy(x, y);
 	}
 	else {
 		if (sel == '1' || sel == '3')
-			cout << "³õÊ¼ÒÑÎŞ¿ÉÏû³ıÏî" << endl;
+			cout << "åˆå§‹å·²æ— å¯æ¶ˆé™¤é¡¹" << endl;
 
 		else if (sel == '2')
-			cout << "³õÊ¼ÒÑÎŞ¿ÉÏû³ıÏî£¬±¾Ğ¡ÌâÎŞ·¨²âÊÔ£¬ÇëÔÙ´ÎÔËĞĞ" << endl;
+			cout << "åˆå§‹å·²æ— å¯æ¶ˆé™¤é¡¹ï¼Œæœ¬å°é¢˜æ— æ³•æµ‹è¯•ï¼Œè¯·å†æ¬¡è¿è¡Œ" << endl;
 	}
 }
 /*
@@ -186,9 +185,9 @@ void mark_zero(char ball[][COL_MAX], int row, int col, int x, int y)
 void down(struct RAND ball[10][10], int row, int col, const char* row_sign, const char* col_sign)
 {
 	int x, y;
-	wait("°´»Ø³µ¼ü½øĞĞÊı×éÏÂÂä³ı0²Ù×÷...", 1);
+	wait("æŒ‰å›è½¦é”®è¿›è¡Œæ•°ç»„ä¸‹è½é™¤0æ“ä½œ...", 1);
 	cout << endl;
-	cout << "ÏÂÂä³ı0ºóµÄÊı×é(²»Í¬É«±êÊ¶)£º" << endl;
+	cout << "ä¸‹è½é™¤0åçš„æ•°ç»„(ä¸åŒè‰²æ ‡è¯†)ï¼š" << endl;
 	make_zero(row, col, ball);
 	move_zero(row, col, ball);
 	mark_zero(row, col, row_sign, col_sign, ball);
@@ -227,9 +226,9 @@ void fill(int row, int col, struct RAND ball[10][10], const char* row_sign, cons
 
 void renew(struct RAND ball[10][10], int row, int col, const char* row_sign, const char* col_sign)
 {
-	wait("°´»Ø³µ¼ü½øĞĞĞÂÖµÌî³ä...", 1);
+	wait("æŒ‰å›è½¦é”®è¿›è¡Œæ–°å€¼å¡«å……...", 1);
 	cout << endl;
-	cout << "ĞÂÖµÌî³äºóµÄÊı×é(²»Í¬É«±êÊ¶)£º" << endl;
+	cout << "æ–°å€¼å¡«å……åçš„æ•°ç»„(ä¸åŒè‰²æ ‡è¯†)ï¼š" << endl;
 	fill(row, col, ball, row_sign, col_sign);
 	
 	if (judge_all(ball, row, col)) {
@@ -238,7 +237,7 @@ void renew(struct RAND ball[10][10], int row, int col, const char* row_sign, con
 		renew(ball, row, col, row_sign, col_sign);
 	}
 	else {
-		cout << "³õÊ¼ÒÑÎŞ¿ÉÏû³ıÏî" << endl;
+		cout << "åˆå§‹å·²æ— å¯æ¶ˆé™¤é¡¹" << endl;
 		return;
 	}
 }
@@ -348,7 +347,7 @@ void exchange(struct RAND ball[10][10], int row, int col, const char* row_sign, 
 	}
 	*p = -1;
 	p = temp;
-	cout << "¿ÉÑ¡ÔñµÄÏû³ıÌáÊ¾£¨²»Í¬É«±êÊ¶£©£º" << endl;
+	cout << "å¯é€‰æ‹©çš„æ¶ˆé™¤æç¤ºï¼ˆä¸åŒè‰²æ ‡è¯†ï¼‰ï¼š" << endl;
 	print_table(row, col, row_sign, col_sign, ball);
 	cct_getxy(x, y);
 	for (; *p >= 0; p++) {
