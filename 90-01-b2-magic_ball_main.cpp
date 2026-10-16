@@ -1,7 +1,6 @@
-/* 2352475 ¼Æ¿Æ Ò×Ñô */
 #include <iostream>
-#include "../include/cmd_console_tools.h"
-#include "../include/common-popstar_ball.h"
+#include "cmd_console_tools.h"
+#include "common-popstar_ball.h"
 #include "90-01-b2-magic_ball.h"
 using namespace std;
 
@@ -15,33 +14,33 @@ int main()
 	int* p_note = note;
 	int* p_bomb = bomb;
 	const char *InputMenu[65] = { 
-		"1.ÄÚ²¿Êı×é£¬Éú³É³õÊ¼×´Ì¬£¬Ñ°ÕÒÊÇ·ñÓĞ³õÊ¼¿ÉÏû³ıÏî",
-		"2.ÄÚ²¿Êı×é£¬Ïû³ı³õÊ¼¿ÉÏû³ıÏîºó·Ç0ÏîÏÂÂä²¢ÓÃ0Ìî³ä",
-		"3.ÄÚ²¿Êı×é£¬Ïû³ı³õÊ¼¿ÉÏû³ıÏîºó²éÕÒÏû³ıÌáÊ¾",
-		"4.n*nµÄ¿ò¼Ü(ÎŞ·Ö¸ôÏß)£¬ÏÔÊ¾³õÊ¼×´Ì¬",
-		"5.n*nµÄ¿ò¼Ü(ÓĞ·Ö¸ôÏß)£¬ÏÔÊ¾³õÊ¼×´Ì¬",
-		"6.n*nµÄ¿ò¼Ü(ÎŞ·Ö¸ôÏß)£¬ÏÔÊ¾³õÊ¼×´Ì¬¼°³õÊ¼¿ÉÏû³ıÏî",
-		"7.n*nµÄ¿ò¼Ü(ÓĞ·Ö¸ôÏß)£¬Ïû³ı³õÊ¼¿ÉÏû³ıÏîºóÏÔÊ¾Ïû³ıÌáÊ¾",
-		"8.cmdÍ¼ĞÎ½çÃæÍêÕû°æ(ÓĞ·Ö¸ôÏß£¬Êó±êÒÆ¶¯Ê±ÏÔÊ¾×ø±ê£¬ÓÒ¼üÍË³ö)",
-		"9.cmdÍ¼ĞÎ½çÃæÍêÕû°æ",
-		"0.ÍË³ö",
+		"1.å†…éƒ¨æ•°ç»„ï¼Œç”Ÿæˆåˆå§‹çŠ¶æ€ï¼Œå¯»æ‰¾æ˜¯å¦æœ‰åˆå§‹å¯æ¶ˆé™¤é¡¹",
+		"2.å†…éƒ¨æ•°ç»„ï¼Œæ¶ˆé™¤åˆå§‹å¯æ¶ˆé™¤é¡¹åé0é¡¹ä¸‹è½å¹¶ç”¨0å¡«å……",
+		"3.å†…éƒ¨æ•°ç»„ï¼Œæ¶ˆé™¤åˆå§‹å¯æ¶ˆé™¤é¡¹åæŸ¥æ‰¾æ¶ˆé™¤æç¤º",
+		"4.n*nçš„æ¡†æ¶(æ— åˆ†éš”çº¿)ï¼Œæ˜¾ç¤ºåˆå§‹çŠ¶æ€",
+		"5.n*nçš„æ¡†æ¶(æœ‰åˆ†éš”çº¿)ï¼Œæ˜¾ç¤ºåˆå§‹çŠ¶æ€",
+		"6.n*nçš„æ¡†æ¶(æ— åˆ†éš”çº¿)ï¼Œæ˜¾ç¤ºåˆå§‹çŠ¶æ€åŠåˆå§‹å¯æ¶ˆé™¤é¡¹",
+		"7.n*nçš„æ¡†æ¶(æœ‰åˆ†éš”çº¿)ï¼Œæ¶ˆé™¤åˆå§‹å¯æ¶ˆé™¤é¡¹åæ˜¾ç¤ºæ¶ˆé™¤æç¤º",
+		"8.cmdå›¾å½¢ç•Œé¢å®Œæ•´ç‰ˆ(æœ‰åˆ†éš”çº¿ï¼Œé¼ æ ‡ç§»åŠ¨æ—¶æ˜¾ç¤ºåæ ‡ï¼Œå³é”®é€€å‡º)",
+		"9.cmdå›¾å½¢ç•Œé¢å®Œæ•´ç‰ˆ",
+		"0.é€€å‡º",
 		NULL
 	};
 	const char* choice = "1234567890";
 	const char* row_sign = "ABCDEFGHI";
 	const char* col_sign = "123456789";
-	const char* unit = "¡ğ";
-	const char* frame1[12] = { "¨X","¨j","¨[","¨d","¨p","¨g","¨^","¨m","¨a","¨T","¨U" };
+	const char* unit = "â—‹";
+	const char* frame1[12] = { "â•”","â•¦","â•—","â• ","â•¬","â•£","â•š","â•©","â•","â•","â•‘" };
 	
 	while (1) {
 		cct_setconsoleborder(90, 30, 120, 9000);
-		cct_setfontsize("ĞÂËÎÌå", 26);
+		cct_setfontsize("æ–°å®‹ä½“", 26);
 		sel = menu(InputMenu, choice);
 		if (sel == '1' || sel == '2' || sel == '3') {
 			cct_cls();
 			input(&row, &col, ROW_MIN, ROW_MAX, COL_MIN, COL_MAX);
 			produce(row, col, 9, ball);
-			cout << "³õÊ¼Êı×é£º" << endl;
+			cout << "åˆå§‹æ•°ç»„ï¼š" << endl;
 			print_table(row, col, row_sign, col_sign, ball);
 			check(ball, row, col, sel, row_sign, col_sign);
 			if (sel == '2' || sel == '3') {
@@ -59,11 +58,11 @@ int main()
 			cct_cls();
 			input(&row, &col, ROW_MIN, ROW_MAX, COL_MIN, COL_MAX);
 			produce(row, col, 9, ball);
-			cout << "³õÊ¼Êı×é£º" << endl;
+			cout << "åˆå§‹æ•°ç»„ï¼š" << endl;
 			print_table(row, col, row_sign, col_sign, ball);
-			wait("°´»Ø³µ¼üÏÔÊ¾Í¼ĞÎ...", 1);
+			wait("æŒ‰å›è½¦é”®æ˜¾ç¤ºå›¾å½¢...", 1);
 			cct_cls();
-			cct_setfontsize("ĞÂËÎÌå", 40);
+			cct_setfontsize("æ–°å®‹ä½“", 40);
 			print_frame(row, col, ball, 0, frame1, sel - '4', 1, 2);
 			cct_getxy(x, y);
 			print_unit(row, col, ball, NULL, unit, &high, &length, sel - '4', 0, COLOR_BLACK);
@@ -75,7 +74,7 @@ int main()
 					print_check(ball, row, col, p_bomb);
 					if (sel == '7') {
 						cct_gotoxy(0, y + 1);
-						wait("°´»Ø³µ¼ü½øĞĞÏû³ı¼°ÏÂÂä³ı0²Ù×÷...", 1);
+						wait("æŒ‰å›è½¦é”®è¿›è¡Œæ¶ˆé™¤åŠä¸‹è½é™¤0æ“ä½œ...", 1);
 					}
 					print_disappear(ball, row, col, bomb);
 					print_move(row, col, ball, NULL, unit, 1, 2, 1, 0);
@@ -83,30 +82,30 @@ int main()
 						cct_gotoxy(0, y + 1);
 						cout << "                                ";
 						cct_gotoxy(0, y + 1);
-						wait("°´»Ø³µ¼ü½øĞĞĞÂÖµÌî³ä...", 1);
+						wait("æŒ‰å›è½¦é”®è¿›è¡Œæ–°å€¼å¡«å……...", 1);
 					}
 					print_fill(ball, row, col);
 				}
 				if (sel == '7') {
 					cct_gotoxy(0, 0);
 					cct_setcolor();
-					cout << "Î´ÕÒµ½³õÊ¼¿ÉÏû³ıÏî            ";
+					cout << "æœªæ‰¾åˆ°åˆå§‹å¯æ¶ˆé™¤é¡¹            ";
 					cct_gotoxy(0, y + 1);
 					cout << "                                ";
 					cct_gotoxy(0, y + 1);
 					cct_setcolor();
-					wait("°´»Ø³µ¼üÏÔÊ¾Ïû³ıÌáÊ¾...", 1);
+					wait("æŒ‰å›è½¦é”®æ˜¾ç¤ºæ¶ˆé™¤æç¤º...", 1);
 				}
 				ret = print_exchange(ball, row, col, p_note);
 				if (sel == '8') {
 					cct_gotoxy(0, 0);
 					cct_setcolor();
 					if (ret) {
-						cout << "£¨µ±Ç°·ÖÊı£º0 ÓÒ¼üÍË³ö£©" << endl;
+						cout << "ï¼ˆå½“å‰åˆ†æ•°ï¼š0 å³é”®é€€å‡ºï¼‰" << endl;
 						location(ball, row, col, y, sel, note);
 					}
 					else {
-						cout << "ÎŞ¿ÉÏû³ıÏî£¬ÓÎÏ·½áÊø£¡" << endl;
+						cout << "æ— å¯æ¶ˆé™¤é¡¹ï¼Œæ¸¸æˆç»“æŸï¼" << endl;
 					}
 				}
 			}
@@ -120,7 +119,7 @@ int main()
 				print_exchange(ball, row, col, p_note);
 				r = game(ball, row, col, y, p_note, note, p_bomb, bomb, unit);
 				if (r) {
-					cout << "(ÎŞ¿ÉÏû³ıÏî£¬ÓÎÏ·½áÊø£¡)";
+					cout << "(æ— å¯æ¶ˆé™¤é¡¹ï¼Œæ¸¸æˆç»“æŸï¼)";
 				}
 			}
 			cct_setcursor(CURSOR_VISIBLE_NORMAL);
